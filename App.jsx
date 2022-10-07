@@ -14,10 +14,10 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontSize: 21, marginBottom: 16 }}>Tela Inicial</Text>
-      <Button mode="contained" onPress={() => navigation.navigate('Detalhes')}>
+      <Button mode="contained" style ={{marginBottom: 16}} onPress={() => navigation.navigate('Detalhes')}>
         Ir para Dets
       </Button>
-      <Button mode="contained" onPress={() => navigation.navigate('Jogo')}>
+      <Button mode="contained" style ={{marginBottom: 16}} onPress={() => navigation.navigate('Jogo')}>
         sacarose
       </Button>
     </View>
@@ -30,9 +30,10 @@ export default function App() {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
+        <Stack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign: 'center', headerStyle: {backgroundColor: '#000000'},headerTitleStyle: {fontWeight: 'bold', color:'#fff'},}}>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Detalhes" component={Detalhes} />
+          <Stack.Screen name="Jogo" component={Jogo} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
