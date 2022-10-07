@@ -7,10 +7,10 @@ export default function Jogo({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{ fontSize: 21, marginBottom: 16 }}>
-          Outra tela, agora detalhes.
+          OMEUDUEUS DOP CEUUUUUUUUUUU
         </Text>
         <Button mode="contained" onPress={() => navigation.goBack()}>
-          voltar
+          POR VAFOR VOLTA.
         </Button>
       </View>
     );

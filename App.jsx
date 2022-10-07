@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import Detalhes from './screens/Detalhes';
+import Jogo from './screens/Jogo';
 
 
 function HomeScreen({ navigation }) {
@@ -15,6 +16,9 @@ function HomeScreen({ navigation }) {
       <Text style={{ fontSize: 21, marginBottom: 16 }}>Tela Inicial</Text>
       <Button mode="contained" onPress={() => navigation.navigate('Detalhes')}>
         Ir para Dets
+      </Button>
+      <Button mode="contained" onPress={() => navigation.navigate('Jogo')}>
+        sacarose
       </Button>
     </View>
   );
