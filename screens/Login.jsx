@@ -1,20 +1,79 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { Button } from 'react-native-paper';
+import { View, StyleSheet, SafeAreaView} from 'react-native';
+import { Button } from 'react-native-paper'
 
-import EmailCaixa from '../components/EmailCaixa';
+import TextBox from '../components/TextBox';
+
 
 export default function Login({ navigation }) {
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Emai
-      <Text style={{ fontSize: 21, marginBottom: 16 }}>Tela Inicial</Text>
-      <Button mode="contained" style ={{marginBottom: 16}} onPress={() => navigation.navigate('Detalhes')}>
-        Ir para Dets
-      </Button>
-      <Button mode="contained" style ={{marginBottom: 16}} onPress={() => navigation.navigate('Problema')}>
-        sacarose
-      </Button>
-    </View>
+    <SafeAreaView>
+      <View style={styles.home}>
+        <View style={styles.arealogo}>
+        
+        </View>
+        <View style={styles.arealogin}>
+          <TextBox
+          style={styles.inputnome}
+          placeholder="Nome"
+          />
+          <TextBox style={styles.inputemail} placeholder="Email"/>
+          <View style={{marginTop: 42, alignItems: 'center'}}>
+            <Button mode="contained" 
+                    style={{backgroundColor:'#fff', color: '#000000', width: '40%'}}
+                    onPress={() => navigation.navigate('Detalhes')}>
+              Confirmar
+            </Button>
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  home: {
+    height: '100%',
+    width: '100%',
+    justifyContent: 'center',
+    backgroundColor: '#000000',
+  },
+  arealogo: {
+    height: '50%',
+    width: '100%',
+    borderWidth:1,
+    borderStyle: 'dashed',
+    borderColor:'red',
+  },
+  arealogin: {
+    height: '50%',
+    width: '100%',
+    borderWidth:1,
+    borderStyle: 'dashed',
+    borderColor:'red',
+  },
+  inputnome: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    color: '#ffffff',
+    borderWidth: 1,
+    borderBottom: 'solid',
+    borderBottomColor:'#ffffff',
+    fontSize: 20,
+  },
+  inputemail: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    color: '#ffffff',
+    borderWidth: 1,
+    borderBottom: 'solid',
+    borderBottomColor:'#ffffff',
+    fontSize: 20,
+  },
+  
+});

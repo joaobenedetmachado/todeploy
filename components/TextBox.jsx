@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { TextInput } from 'react-native-paper';
 
-const EmailCaixa = () => {
+const TextBox = () => {
   const [text, setText] = React.useState("");
 
   return (
     <TextInput
-      label="Email"
+      label="texto"
       value={text}
       onChangeText={text => setText(text)}
     />
   );
 };
 
-export default EmailCaixa;
+export default TextBox;
