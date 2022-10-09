@@ -1,31 +1,33 @@
 import * as React from 'react';
-import { View, StyleSheet, SafeAreaView, Image} from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView, TextInput, Image} from 'react-native';
+import Constants from 'expo-constants';
 import { Button } from 'react-native-paper'
 
-import TextNome from '../components/TextNome';
-import TextEmail from '../components/TextEmail.jsx'
+export default function HomeScreen({ navigation }) {
 
-
-export default function Login({ navigation }) {
+  const [text, onChangeText] = React.useState();
+  const [number, onChangeNumber] = React.useState(null);
 
   return (
     <SafeAreaView>
       <View style={styles.home}>
-      <View style={styles.arealogo}>
+        <View style={styles.arealogo}>
           <View style={{width:'100%',height:'50%', }}>
             <Image style={{width:'100%'}} source={require('./logones1.png')}/>
           </View>
         </View>
         <View style={styles.arealogin}>
-          <TextNome
+          <TextInput
           style={styles.inputnome}
+          onChangeText={onChangeText}
+          value={text}
           placeholder="Nome"
           />
-          <TextEmail style={styles.inputemail} placeholder="Email"/>
+          <TextInput style={styles.inputemail} onChangeText={onChangeText} value={text} placeholder="Email" />
           <View style={{marginTop: 42, alignItems: 'center'}}>
             <Button mode="contained" 
-                    style={styles.botao}
-                    onPress={() => navigation.navigate('Problema')}>
+                    style={{backgroundColor:'#fff', color: '#000000', width: '40%'}}
+                    onPress={() => navigation.navigate('Detalhes')}>
               Confirmar
             </Button>
           </View>
@@ -45,12 +47,12 @@ const styles = StyleSheet.create({
   arealogo: {
     height: '50%',
     width: '100%',
-    borderWidth:1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   arealogin: {
     height: '50%',
     width: '100%',
-    borderWidth:1,
   },
   inputnome: {
     height: 40,
@@ -74,8 +76,5 @@ const styles = StyleSheet.create({
     borderBottomColor:'#ffffff',
     fontSize: 20,
   },
-  botao: {backgroundColor:'#fff',
-         color: '#000000',
-        width: '40%'}
   
 });
