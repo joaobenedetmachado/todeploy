@@ -2,7 +2,8 @@ import * as React from 'react';
 import { View, StyleSheet, SafeAreaView} from 'react-native';
 import { Button } from 'react-native-paper'
 
-import TextBox from '../components/TextBox';
+import TextNome from '../components/TextNome';
+import TextEmail from '../components/TextEmail.jsx'
 
 
 export default function Login({ navigation }) {
@@ -14,14 +15,14 @@ export default function Login({ navigation }) {
         
         </View>
         <View style={styles.arealogin}>
-          <TextBox
+          <TextNome
           style={styles.inputnome}
           placeholder="Nome"
           />
-          <TextBox style={styles.inputemail} placeholder="Email"/>
+          <TextEmail style={styles.inputemail} placeholder="Email"/>
           <View style={{marginTop: 42, alignItems: 'center'}}>
             <Button mode="contained" 
-                    style={{backgroundColor:'#fff', color: '#000000', width: '40%'}}
+                    style={styles.botao}
                     onPress={() => navigation.navigate('Detalhes')}>
               Confirmar
             </Button>
@@ -75,5 +76,8 @@ const styles = StyleSheet.create({
     borderBottomColor:'#ffffff',
     fontSize: 20,
   },
+  botao: {backgroundColor:'#fff',
+         color: '#000000',
+        width: '40%'}
   
 });

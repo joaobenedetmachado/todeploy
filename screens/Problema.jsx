@@ -1,7 +1,6 @@
-import { Text, View, StyleSheet, SafeAreaView, Image, Switch} from 'react-native';
-import React, { useState } from "react";
+import { Text, View, StyleSheet, SafeAreaView, Image} from 'react-native';
+import React from "react";
 
-import CardS from "./CardS"
 
 
 export default function Problema() {
@@ -14,15 +13,6 @@ export default function Problema() {
           <View style={styles.imgesqueleto}>
             <Image source={require('./esqueleto.png')}/>
           </View>
-            <View style={styles.switchombro}>
-            <CardS/>
-            </View>
-            <View style={styles.switchcostas}>
-            <CardS/>
-            </View>
-            <View style={styles.switchjoelho}>
-            <CardS/>
-            </View>
         </View>
     </SafeAreaView>
   );
@@ -51,17 +41,4 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     position: 'absolute',
-  },
-  switchombro : {
-    marginTop: 75,
-    marginLeft: 100,
-  },
-  switchcostas : {
-    marginTop: 95,
-    marginLeft: 150,
-  },
-  switchjoelho : {
-    marginTop: 200,
-    marginLeft: 120,
-  }
-});
+  }});
