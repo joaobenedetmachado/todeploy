@@ -5,7 +5,6 @@ import React from "react";
 
 export default function Problema() {
   return (
-    <SafeAreaView>
       <View style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.paragraph}>Selecione o local da sua dor</Text>
@@ -13,8 +12,7 @@ export default function Problema() {
           <View style={styles.imgesqueleto}>
             <Image source={require('./esqueleto.png')}/>
           </View>
-        </View>
-    </SafeAreaView>
+      </View>
   );
 }
 

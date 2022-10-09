@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, SafeAreaView} from 'react-native';
+import { View, StyleSheet, SafeAreaView, Image} from 'react-native';
 import { Button } from 'react-native-paper'
 
 import TextNome from '../components/TextNome';
@@ -11,8 +11,10 @@ export default function Login({ navigation }) {
   return (
     <SafeAreaView>
       <View style={styles.home}>
-        <View style={styles.arealogo}>
-        
+      <View style={styles.arealogo}>
+          <View style={{width:'100%',height:'50%', }}>
+            <Image style={{width:'100%'}} source={require('./logones1.png')}/>
+          </View>
         </View>
         <View style={styles.arealogin}>
           <TextNome
@@ -23,7 +25,7 @@ export default function Login({ navigation }) {
           <View style={{marginTop: 42, alignItems: 'center'}}>
             <Button mode="contained" 
                     style={styles.botao}
-                    onPress={() => navigation.navigate('Detalhes')}>
+                    onPress={() => navigation.navigate('Problema')}>
               Confirmar
             </Button>
           </View>
@@ -44,15 +46,11 @@ const styles = StyleSheet.create({
     height: '50%',
     width: '100%',
     borderWidth:1,
-    borderStyle: 'dashed',
-    borderColor:'red',
   },
   arealogin: {
     height: '50%',
     width: '100%',
     borderWidth:1,
-    borderStyle: 'dashed',
-    borderColor:'red',
   },
   inputnome: {
     height: 40,
