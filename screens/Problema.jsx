@@ -29,6 +29,19 @@ export default function App() {
       setIsEnabledcostas(previousState => !previousState)
     }
 
+    const [isEnabledjoelho, setIsEnabledjoelho] = useState(false);
+    const [textjoelho, setTextjoelho] = useState('')
+    const toggleSwitchjoelho = () => {
+      if (isEnabledjoelho) {
+        setTextjoelho('')
+      }
+      else {
+        setTextjoelho('Joelho')
+      }
+
+      setIsEnabledjoelho(previousState => !previousState)
+    }
+
     
   return (
     <SafeAreaView>
@@ -63,10 +76,16 @@ export default function App() {
             </View>
             <View style={styles.switchjoelho}>
             <View>
-            
+            <Switch
+              trackColor={{ false: "#767577", true: "#81b0ff" }}
+              thumbColor={isEnabledjoelho ? "#f5dd4b" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitchjoelho}
+              value={isEnabledjoelho}
+              />
             </View>
             </View>
-            <View style={{height: 100, width: '100%', justifyContent:'center', alignItems: 'center', marginTop: 80}}>
+            <View style={{height: 100, width: '100%', justifyContent:'center', alignItems: 'center', marginTop: 60}}>
               <View style={{height: 40, width: 150, backgroundColor: '#fff', borderRadius: 10, justifyContent:'center', alignItems: 'center',}}>
               <Text style={{fontSize: 25}}>{textombro}</Text>
               </View>
