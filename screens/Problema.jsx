@@ -1,18 +1,81 @@
-import { Text, View, StyleSheet, SafeAreaView, Image} from 'react-native';
-import React from "react";
+import { Text, View, StyleSheet, SafeAreaView, Image, Switch} from 'react-native';
+import React, { useState, isValidElement } from "react";
 
+export default function App() {
+    problemas = []
+    const [isEnabledombro, setIsEnabledombro] = useState(false);
+    const [textombro, setTextombro] = useState('')
+    const toggleSwitchombro = () => {
+      if (isEnabledombro) {
+        setTextombro('')
+      }
+      else {
+        setTextombro('Ombro')
+      }
 
+      setIsEnabledombro(previousState => !previousState)
+    }
 
-export default function Problema() {
+    const [isEnabledcostas, setIsEnabledcostas] = useState(false);
+    const [textcostas, setTextcostas] = useState('')
+    const toggleSwitchcostas = () => {
+      if (isEnabledcostas) {
+        setTextcostas('')
+      }
+      else {
+        setTextcostas('Costas')
+      }
+
+      setIsEnabledcostas(previousState => !previousState)
+    }
+
+    
   return (
+    <SafeAreaView>
       <View style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.paragraph}>Selecione o local da sua dor</Text>
           </View>
           <View style={styles.imgesqueleto}>
-            <Image source={require('./esqueleto.png')}/>
+            <Image style={{}} source={require('./esqueletoo.png')}/>
           </View>
-      </View>
+            <View style={styles.switchombro}>
+            <View>
+              <Switch
+              trackColor={{ false: "#767577", true: "#81b0ff" }}
+              thumbColor={isEnabledombro ? "#f5dd4b" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitchombro}
+              value={isEnabledombro}
+              />
+            </View>
+            </View>
+            <View style={styles.switchcostas}>
+            <View>
+              <Switch
+              trackColor={{ false: "#767577", true: "#81b0ff" }}
+              thumbColor={isEnabledcostas ? "#f5dd4b" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitchcostas}
+              value={isEnabledcostas}
+              />
+            </View>
+            </View>
+            <View style={styles.switchjoelho}>
+            <View>
+            
+            </View>
+            </View>
+            <View style={{height: 100, width: '100%', justifyContent:'center', alignItems: 'center', marginTop: 80}}>
+              <View style={{height: 40, width: 150, backgroundColor: '#fff', borderRadius: 10, justifyContent:'center', alignItems: 'center',}}>
+              <Text style={{fontSize: 25}}>{textombro}</Text>
+              </View>
+              <View style={{height: 40, width: 150, backgroundColor: '#fff', marginTop: 8, borderRadius: 10, justifyContent:'center', alignItems: 'center',}}>
+              <Text style={{fontSize: 25}}>{textcostas}</Text>
+              </View>
+            </View>
+        </View>
+    </SafeAreaView>
   );
 }
 
@@ -29,14 +92,27 @@ const styles = StyleSheet.create({
     fontStyle: 'bold',
   },
   header : {
-    height : 120,
+    height : 80,
     backgroundColor: '#000000',
     justifyContent: 'center',
     borderBottomRightRadius: 30,
   },
   imgesqueleto : {
-    marginTop: 80,
+    marginTop: 45,
     width: '100%',
     alignItems: 'center',
     position: 'absolute',
-  }});
+  },
+  switchombro : {
+    marginTop: 50,
+    marginLeft: 110,
+  },
+  switchcostas : {
+    marginTop: 55,
+    marginLeft: 150,
+  },
+  switchjoelho : {
+    marginTop: 150,
+    marginLeft: 127,
+  }
+});
