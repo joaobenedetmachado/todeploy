@@ -1,47 +1,46 @@
 import { Text, View, StyleSheet, SafeAreaView, Image, Switch} from 'react-native';
 import React, { useState, isValidElement } from "react";
+import Constants from 'expo-constants';
 
 export default function App() {
-    problemas = []
     const [isEnabledombro, setIsEnabledombro] = useState(false);
-    const [textombro, setTextombro] = useState('')
+    const [text, setText] = useState([])
+
+    const [isEnabledcostas, setIsEnabledcostas] = useState(false);
+
+    const [isEnabledjoelho, setIsEnabledjoelho] = useState(false);
+
     const toggleSwitchombro = () => {
       if (isEnabledombro) {
-        setTextombro('')
+        setText(current => [...current, '']);
       }
       else {
-        setTextombro('Ombro')
+        setText(current => [...current, 'Ombro']);
       }
 
       setIsEnabledombro(previousState => !previousState)
     }
-
-    const [isEnabledcostas, setIsEnabledcostas] = useState(false);
-    const [textcostas, setTextcostas] = useState('')
     const toggleSwitchcostas = () => {
       if (isEnabledcostas) {
-        setTextcostas('')
+        setText(current => [...current, '']);
       }
       else {
-        setTextcostas('Costas')
+        setText(current => [...current, 'Costas']);
       }
 
       setIsEnabledcostas(previousState => !previousState)
     }
 
-    const [isEnabledjoelho, setIsEnabledjoelho] = useState(false);
-    const [textjoelho, setTextjoelho] = useState('')
     const toggleSwitchjoelho = () => {
       if (isEnabledjoelho) {
-        setTextjoelho('')
+        setText(current => [...current, '']);
       }
       else {
-        setTextjoelho('Joelho')
+        setText(current => [...current, 'Joelho']);
       }
 
       setIsEnabledjoelho(previousState => !previousState)
     }
-
     
   return (
     <SafeAreaView>
@@ -76,7 +75,7 @@ export default function App() {
             </View>
             <View style={styles.switchjoelho}>
             <View>
-            <Switch
+              <Switch
               trackColor={{ false: "#767577", true: "#81b0ff" }}
               thumbColor={isEnabledjoelho ? "#f5dd4b" : "#f4f3f4"}
               ios_backgroundColor="#3e3e3e"
@@ -85,12 +84,12 @@ export default function App() {
               />
             </View>
             </View>
-            <View style={{height: 100, width: '100%', justifyContent:'center', alignItems: 'center', marginTop: 60}}>
+            <View style={{height: 100, width: '100%', justifyContent:'center', alignItems: 'center', marginTop: 30}}>
               <View style={{height: 40, width: 150, backgroundColor: '#fff', borderRadius: 10, justifyContent:'center', alignItems: 'center',}}>
-              <Text style={{fontSize: 25}}>{textombro}</Text>
+              <Text style={{fontSize: 25}}>{text[0]}</Text>
               </View>
               <View style={{height: 40, width: 150, backgroundColor: '#fff', marginTop: 8, borderRadius: 10, justifyContent:'center', alignItems: 'center',}}>
-              <Text style={{fontSize: 25}}>{textcostas}</Text>
+              <Text style={{fontSize: 25}}>{text[1]}</Text>
               </View>
             </View>
         </View>

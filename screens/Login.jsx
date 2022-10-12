@@ -27,7 +27,7 @@ export default function HomeScreen({ navigation }) {
           <View style={{marginTop: 42, alignItems: 'center'}}>
             <Button mode="contained" 
                     style={{backgroundColor:'#fff', color: '#000000', width: '40%'}}
-                    onPress={() => navigation.navigate('Problema')}>
+                    onPress={() => navigation.navigate('Detalhes')}>
               Confirmar
             </Button>
           </View>
