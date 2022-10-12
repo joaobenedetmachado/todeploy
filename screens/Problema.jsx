@@ -50,7 +50,7 @@ export default function App() {
             <Text style={styles.paragraph}>Selecione o local da sua dor</Text>
           </View>
           <View style={styles.imgesqueleto}>
-            <Image style={{}} source={require('./esqueletoo.png')}/>
+            <Image style={{}} source={require('./esqueleto.png')}/>
           </View>
             <View style={styles.switchombro}>
             <View>
