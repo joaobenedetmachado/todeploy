@@ -3,7 +3,7 @@ import React, { useState, isValidElement } from "react";
 import Constants from 'expo-constants';
 import { Button } from 'react-native-paper';
 
-export default function App() {
+export default function App({ navigation }) {
     const [isEnabledombro, setIsEnabledombro] = useState(false);
     const [text, setText] = useState([])
 
@@ -13,20 +13,20 @@ export default function App() {
 
     const toggleSwitchombro = () => {
       if (isEnabledombro) {
-        setText(current => [...current, '']);
+        setText(current => ['']);
       }
       else {
-        setText(current => [...current, 'Ombro']);
+        setText(current => ['Ombro']);
       }
 
       setIsEnabledombro(previousState => !previousState)
     }
     const toggleSwitchcostas = () => {
       if (isEnabledcostas) {
-        setText(current => [...current, '']);
+        setText(current => ['']);
       }
       else {
-        setText(current => [...current, 'Costas']);
+        setText(current => ['Costas']);
       }
 
       setIsEnabledcostas(previousState => !previousState)
@@ -34,10 +34,10 @@ export default function App() {
 
     const toggleSwitchjoelho = () => {
       if (isEnabledjoelho) {
-        setText(current => [...current, '']);
+        setText(current => ['']);
       }
       else {
-        setText(current => [...current, 'Joelho']);
+        setText(current => ['Joelho']);
       }
 
       setIsEnabledjoelho(previousState => !previousState)
@@ -90,7 +90,7 @@ export default function App() {
               <Text style={{fontSize: 25}}>{text[0]}</Text>
               </View>
               <View style={{justifyContent:'center', alignItems: 'center',}}>
-              <Button color='#000000' mode="contained" style={{ marginTop: 10, width:150, height: 40, borderRadius: 10, alignItems:'center', justifyContent:'center'}}>
+              <Button color='#000000' mode="contained" onPress={() => navigation.navigate('LastScreen')} style={{ marginTop: 10, width:150, height: 40, borderRadius: 10, alignItems:'center', justifyContent:'center'}}>
     Continuar
   </Button>
               </View>
